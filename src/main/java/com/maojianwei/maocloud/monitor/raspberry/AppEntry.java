@@ -1,12 +1,12 @@
-package org.mao;
+package com.maojianwei.maocloud.monitor.raspberry;
 
+import com.maojianwei.maocloud.monitor.raspberry.core.Core;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import org.mao.core.Core;
-import org.mao.gui.MainPageGuiController;
+import com.maojianwei.maocloud.monitor.raspberry.gui.MainPageGuiController;
 
 import java.net.URL;
 

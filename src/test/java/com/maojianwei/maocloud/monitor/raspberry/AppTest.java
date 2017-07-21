@@ -1,4 +1,4 @@
-package org.mao;
+package com.maojianwei.maocloud.monitor.raspberry;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

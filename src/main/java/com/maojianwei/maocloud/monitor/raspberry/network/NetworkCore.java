@@ -1,11 +1,11 @@
-package org.mao.network;
+package com.maojianwei.maocloud.monitor.raspberry.network;
 
+import com.maojianwei.maocloud.monitor.raspberry.network.api.UdpListener;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelOption;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioDatagramChannel;
-import org.mao.network.api.UdpListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,8 +25,6 @@ public class NetworkCore {
 
     /**
      * Start Udp Receiver.
-     *
-     * @return the closeFuture; null if any exception was caught
      */
     public void startUdpRecv() {
         bootstrap = new Bootstrap();

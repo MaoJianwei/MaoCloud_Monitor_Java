@@ -1,9 +1,8 @@
-package org.mao.base;
+package com.maojianwei.maocloud.monitor.raspberry.base;
 
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
-import javafx.scene.Node;
 
 /**
  * Created by mao on 2016/10/1.

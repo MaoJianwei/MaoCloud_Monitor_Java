@@ -2,13 +2,44 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.mao</groupId>
-    <artifactId>mao.cloud.pi</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <groupId>com.maojianwei.maocloud</groupId>
+    <artifactId>maocloud-monitor-raspberry</artifactId>
+    <version>1.0</version>
     <packaging>jar</packaging>
 
-    <name>mao.cloud.pi</name>
-    <url>http://maven.apache.org</url>
+
+    <name>maocloud-monitor-raspberry</name>
+    <description>MaoCloud monitor client for Raspberry</description>
+    <url>http://www.maojianwei.com/</url>
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+    <developers>
+        <developer>
+            <name>Jianwei Mao</name>
+            <email>maojianwei2020@gmail.com</email>
+        </developer>
+    </developers>
+    <scm>
+        <connection>scm:git:git@github.com:MaoJianwei/MaoCloud_Monitor_Java.git</connection>
+        <developerConnection>scm:git:git@github.com:MaoJianwei/MaoCloud_Monitor_Java.git</developerConnection>
+        <url>git@github.com:MaoJianwei/MaoCloud_Monitor_Java.git</url>
+    </scm>
+    <distributionManagement>
+        <snapshotRepository>
+            <id>mavenCentral_ossrh</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>mavenCentral_ossrh</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+    </distributionManagement>
+
+
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -42,7 +73,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>org.mao.AppEntry</mainClass>
+                            <mainClass>com.maojianwei.maocloud.monitor.raspberry.AppEntry</mainClass>
                             <!-- add dependency classpath: ./dependency-jars/ should be same to maven-dependency-plugin below-->
                             <addClasspath>true</addClasspath>
                             <!--<classpathPrefix>dependency-jars/</classpathPrefix>-->
@@ -89,6 +120,49 @@
                     <source>1.8</source>
                     <target>1.8</target>
                 </configuration>
+            </plugin>
+
+
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>3.0.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.10.4</version>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>1.6</version>
+                <executions>
+                    <execution>
+                        <id>sign-artifacts</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
